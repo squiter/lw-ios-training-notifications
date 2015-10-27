@@ -24,4 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)scheduleNotifications:(id)sender {
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [[NSDate date] dateByAddingTimeInterval:10];
+    localNotification.alertTitle = @"Notificação Local";
+    localNotification.alertBody = @"Minha primeira notificação";
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+}
+
 @end
